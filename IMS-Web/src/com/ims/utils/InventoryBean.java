@@ -1,9 +1,6 @@
 package com.ims.utils;
 
 import java.lang.reflect.Field;
-
-
-
 /**
  * @author Vartika
  *
@@ -167,9 +164,17 @@ public class InventoryBean {
 	}
 	
 	public InventoryBean (String product, String id, String model, String manuf, String typeCode, String locationCode, Double msrp, Double unitCost, Double discountRate, Double qty) {
-		
-		
-	}
+		this.productId = id;
+		this.product=product;
+		this.discountRate=discountRate;
+		this.model = model;
+		this.manufacturer=manuf;
+		this.locationCode=locationCode;
+		this.msrp=msrp;
+		this.unitCost=unitCost;
+		this.typeCode = typeCode;
+		this.quantity=qty;
+		}
 	
 	public boolean checkMatch(String keyword) throws IllegalAccessException {
 	    for(Field field: this.getClass().getDeclaredFields()){	    		    	
@@ -179,9 +184,4 @@ public class InventoryBean {
 	    }
 	   return false;
 	}
-
-public InventoryBean() {
-		// TODO Auto-generated constructor stub
-	}
-
 }
