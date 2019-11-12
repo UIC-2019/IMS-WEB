@@ -8,7 +8,9 @@ public class ConnectionProvider {
 		try{
 			Class.forName(DRIVER);
 			con=DriverManager.getConnection(CONNECTION_URL,USERNAME,PASSWORD);
-			}catch(Exception e){}
+			}catch(SQLException | ClassNotFoundException e){
+				e.printStackTrace();
+			}
 	}
 	public static Connection getCon(){
 		return con;
