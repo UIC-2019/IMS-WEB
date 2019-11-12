@@ -1,31 +1,50 @@
 package com.ims.utils;
 
-import java.lang.reflect.Field;
 /**
  * @author Vartika
  *
  */
 public class InventoryBean {
 	
-	
+	/**
+	 * product
+	 */
 	private String product;
-	
+	/**
+	 * productId
+	 */
 	private String productId;
-	
+	/**
+	 * model
+	 */
 	private String model;
-	
+	/**
+	 * manufacturer
+	 */
 	private String manufacturer;
-	
+	/**
+	 * typeCode
+	 */
 	private String typeCode;
-	
+	/**
+	 * locationCode
+	 */
 	private String locationCode;
-	
+	/**
+	 * msrp
+	 */
 	private Double msrp;
-	
+	/**
+	 * unitCost
+	 */
 	private Double unitCost;
-	
+	/**
+	 * discountRate
+	 */
 	private Double discountRate;
-	
+	/**
+	 * quantity
+	 */
 	private Double quantity;
 	
 
@@ -162,7 +181,19 @@ public class InventoryBean {
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-	
+	/**
+	 * InventoryBean
+	 * @param product
+	 * @param id
+	 * @param model
+	 * @param manuf
+	 * @param typeCode
+	 * @param locationCode
+	 * @param msrp
+	 * @param unitCost
+	 * @param discountRate
+	 * @param qty
+	 */
 	public InventoryBean (String product, String id, String model, String manuf, String typeCode, String locationCode, Double msrp, Double unitCost, Double discountRate, Double qty) {
 		this.productId = id;
 		this.product=product;
@@ -176,12 +207,4 @@ public class InventoryBean {
 		this.quantity=qty;
 		}
 	
-	public boolean checkMatch(String keyword) throws IllegalAccessException {
-	    for(Field field: this.getClass().getDeclaredFields()){	    		    	
-	        String value = String.class.cast(field.get(this));
-	        if(value.equalsIgnoreCase(keyword))
-	            return true;
-	    }
-	   return false;
-	}
 }
