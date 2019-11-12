@@ -13,6 +13,9 @@ import com.ims.utils.InventoryDAO;
  *
  */
 public class DisplayInventoryImpl {
+	/**
+	 * InventoryDAO initialized
+	 */
 InventoryDAO dao = new InventoryDAO();
 	/**
 	 * 
@@ -20,7 +23,10 @@ InventoryDAO dao = new InventoryDAO();
 	public DisplayInventoryImpl() {
 		// TODO Auto-generated constructor stub
 	}
-
+	/**
+	 * inventoryList of InventoryBean sent to controller
+	 * @return
+	 */
 	public ArrayList<InventoryBean> loadInventory() {
 		ArrayList<InventoryBean> inventoryList = 	dao.loadInventory();
 		return inventoryList;

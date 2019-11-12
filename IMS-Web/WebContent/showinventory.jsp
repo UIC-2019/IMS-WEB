@@ -57,9 +57,8 @@ $(document).ready(function() {
 			Management System</a>
 	<div class="collapse navbar-collapse" id="myNavbar">
 	<ul class="nav navbar-nav navbar-right">
-	  <li> <a href="welcome.jsp" class="nav-link">Home</a></li>
+	  <li> <a href="Home.jsp" class="nav-link">Home</a></li>
 	  <li> <a href="showinventory.jsp" class="nav-link">Show</a></li>
-	   <li><a href="search.jsp" class="nav-link">Search</a></li>
 	   <li><a href="update.jsp" class="nav-link">Update</a>	</li>
 	   <li><a href="email.jsp" class="nav-link">Email</a>	</li>
 	   <li><a href="login.jsp" class="nav-link">Logout</a></li>
