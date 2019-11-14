@@ -4,7 +4,7 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
-
+<%@page import="com.ims.utils.ConnectionProvider"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -14,28 +14,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	
 	<%	
 	Connection connect = null;
 	Statement statement = null;
 	
 	try {
-		connect = DriverManager.getConnection("jdbc:sqlserver://NAIL4701LP6413Q\\SQLEXPRESS:1433;databaseName=sqlims;user=system;password=sqlserver");
-
-
-		statement = connect.createStatement();
-		
-		
+		ConnectionProvider cp = new ConnectionProvider();
+		Connection conn = cp.getCon();
+		statement = conn.createStatement();
 		String ProductID = request.getParameter("id");
-		
 		String sql = "Delete from inventory " +
 				" WHERE ProductID = '" + ProductID + "' ";
-		
-
-		
 		statement.execute(sql);
-        
          out.println("Record was deleted successfully");
 	  		
 		} catch (Exception e) {
@@ -47,7 +37,6 @@
 		try {
 			if(statement!=null){
 				statement.close();
-				connect.close();
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

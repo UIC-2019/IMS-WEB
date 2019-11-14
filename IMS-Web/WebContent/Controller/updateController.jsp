@@ -4,7 +4,7 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
-
+<%@page import="com.ims.utils.ConnectionProvider"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -21,25 +21,19 @@
 	Statement statement = null;
 	
 	try {
-		connect = DriverManager.getConnection("jdbc:sqlserver://NAIL4701LP6413Q\\SQLEXPRESS:1433;databaseName=sqlims;user=system;password=sqlserver");
-
-
+		ConnectionProvider cp = new ConnectionProvider();
+		connect= cp.getCon();
 		statement = connect.createStatement();
-		
-		
 		String ProductID = request.getParameter("ProductID");
-		
-
 		String Product = request.getParameter("Product");
 		String Model = request.getParameter("Model");
 		String Manufacturer = request.getParameter("Manufacturer");
 		String TypeCode = request.getParameter("TypeCode");
-		
-		int LocationCode = Integer.parseInt(request.getParameter("LocationCode"));
+		String LocationCode = request.getParameter("LocationCode");
 		float MSRP = Float.parseFloat(request.getParameter("MSRP"));
 		float UNITCOST = Float.parseFloat(request.getParameter("UNITCOST"));
 		float DISCOUNTRATE = Float.parseFloat(request.getParameter("DISCOUNTRATE"));
-		int QTY = Integer.parseInt(request.getParameter("QTY"));
+		float QTY = Float.parseFloat(request.getParameter("QTY"));
 		
 
 		String id= request.getParameter("id");
@@ -71,7 +65,6 @@
 		try {
 			if(statement!=null){
 				statement.close();
-				connect.close();
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

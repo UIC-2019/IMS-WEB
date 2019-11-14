@@ -24,12 +24,8 @@ arr[6]=request.getParameter("MSRP");
 arr[7]=request.getParameter("UNITCOST");
 arr[8]=request.getParameter("DISCOUNTRATE");
 arr[9]=request.getParameter("QTY");
-
 UpdateMenuImpl obj = new UpdateMenuImpl();
-
 obj.insertValues(arr);
-
-
 %>
 
 <script type="text/javascript">
