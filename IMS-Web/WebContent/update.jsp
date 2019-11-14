@@ -62,7 +62,13 @@ $(document).ready(function() {
 </style>
 
 </head>
-
+<%
+ String email = (String) session.getAttribute("email");
+    if (null == email) {
+    
+    response.sendRedirect("login.jsp");
+    } 
+  %>
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -109,7 +115,7 @@ $(document).ready(function() {
 <%
 try{ 
 
-Connection conn = DriverManager.getConnection("jdbc:sqlserver://NAIL4701LP6413Q\\SQLEXPRESS:1433;databaseName=sqlims;user=system;password=sqlserver");
+Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER:1433; databaseName=sqlims; integratedSecurity=true");
 
 
 Statement statement = conn.createStatement();
