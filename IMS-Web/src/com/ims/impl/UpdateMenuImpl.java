@@ -3,12 +3,13 @@
  */
 package com.ims.impl;
 
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import com.ims.utils.ConnectionProvider;
 
 /**
  * @author Nisha
@@ -25,15 +26,13 @@ public class UpdateMenuImpl {
 	
 	public void insertValues(String[] arr) throws SQLException {
 		
-		Connection conn = DriverManager.getConnection("jdbc:sqlserver://NAIL4701LP6413Q\\SQLEXPRESS:1433;databaseName=sqlims;user=system;password=sqlserver");
-
+		ConnectionProvider cp = new ConnectionProvider();
+		Connection conn = cp.getCon();
 		Statement statement = conn.createStatement();
 		PreparedStatement ps = null;
 		 String selectSql = "Select * from inventory where ProductID = (SELECT max(ProductID) from inventory)"; 
 		  	  ResultSet resultSet = statement.executeQuery(selectSql);
 			  if (resultSet.next()) {
-				  
-				  
 				  String id=resultSet.getString(1);
 					id = id.substring(1);
 					Integer productId = Integer.parseInt(id) + 1;
@@ -64,5 +63,4 @@ public class UpdateMenuImpl {
 	}
 
 }
-
 

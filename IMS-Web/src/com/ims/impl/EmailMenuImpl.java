@@ -18,7 +18,7 @@ import com.ims.utils.Constants;
 import com.ims.utils.InventoryDAO;
 
 /**
- * @author Vartika
+ * @author Harshitha
  *
  */
 
@@ -54,7 +54,7 @@ public class EmailMenuImpl {
 		        message.setSubject("IMS");
 		     // Set Content: text field
 		        message.setText(Constants.MESSAGE);
-		        String filename = "E:\\Harshitha\\MastersProgram\\FallTerm\\EnterpriseJava\\Assignment\\HW3\\WebPage\\IMS-Web\\FileToMail.txt";
+		        String filename = "FileToMail.txt";
 		        //Attach File: text field
 		         DataSource source = new FileDataSource(filename);
 		         message.setDataHandler(new DataHandler(source));
@@ -62,9 +62,8 @@ public class EmailMenuImpl {
 		        Transport transport = session.getTransport("smtp");
 		     // Connecting with username and password
 		        transport.connect("smtp.gmail.com", Constants.USERNAME, Constants.PASSWORD);
-		        System.out.println(Constants.MAILSUCCESS+" "+sendersmail);
 		        status = "success";
-		        //transport.sendMessage(message, message.getAllRecipients());
+		        transport.sendMessage(message, message.getAllRecipients());
 		        return status;
 		} catch (SQLException e1) {
 			e1.printStackTrace();
