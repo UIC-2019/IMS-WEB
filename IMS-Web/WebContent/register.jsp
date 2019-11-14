@@ -51,7 +51,15 @@ return false;
 </script> 
 	
 </head>
-
+ <%
+ String email = (String) session.getAttribute("email");
+    if (null == email) {
+    
+    response.sendRedirect("register.jsp");
+    } else {
+    	response.sendRedirect("Home.jsp");
+    }
+  %>
 <body>
 	
 	<div class="limiter">

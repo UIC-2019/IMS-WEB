@@ -53,7 +53,13 @@ return false;
 }
 </script>
 </head>
-
+<%
+    String email = (String) session.getAttribute("email");
+    if (null == email) {
+    session.setAttribute("ErrorMessage", "You are not logged in. Redirecting to login.");
+    response.sendRedirect("login.jsp");
+    }
+ %>
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">

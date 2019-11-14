@@ -40,7 +40,13 @@
 </style>
 
 </head>
-
+<%
+ String email = (String) session.getAttribute("email");
+    if (null == email) {
+    
+    response.sendRedirect("login.jsp");
+    } 
+  %>
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">

@@ -49,6 +49,13 @@ $(document).ready(function() {
 </style>
 
 </head>
+<%
+ String email = (String) session.getAttribute("email");
+    if (null == email) {
+    
+    response.sendRedirect("login.jsp");
+    } 
+  %>
 
 <body id="page-top">
 

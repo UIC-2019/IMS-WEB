@@ -42,6 +42,13 @@
 }
 </style>
 </head>
+<%
+    String email = (String) session.getAttribute("email");
+    if (null == email) {
+    session.setAttribute("ErrorMessage", "You are not logged in. Redirecting to login.");
+    response.sendRedirect("login.jsp");
+    }
+ %>
 
 <body class=id="page-top" style="background-image: url('images/bg-01.jpg')">
 
