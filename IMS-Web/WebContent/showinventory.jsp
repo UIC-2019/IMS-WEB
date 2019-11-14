@@ -56,7 +56,6 @@ $(document).ready(function() {
     response.sendRedirect("login.jsp");
     } 
   %>
-
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -137,12 +136,20 @@ $(document).ready(function() {
 					    <th style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%"><i class="fa fa-linkedin" style="font-size:24px; color:#0e76a8"></i></i></th>
 					    <th style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%"><i class="fa fa-linkedin" style="font-size:24px; color:#0e76a8"></i></i></th>
 					  </tr>
-					  <tr>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Vartika</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Nisha</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Harshitha</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Sooraj</td>
-					  </tr>
+					 <tr>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						 <a href="https://www.linkedin.com/in/vartika-singh-583b1150/"><!--LinkedIN link access -->Vartika</td></a>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="https://www.linkedin.com/in/nisha-aher/"><!--LinkedIN link access -->Nisha</td></a>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="http://www.linkedin.com/in/harshithas"><!--LinkedIN link access -->Harshitha</td>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="https://www.linkedin.com/in/sooraj-holla-65a313179/"><!--LinkedIN link access -->Sooraj</td>
+				</tr>
 					 </table>
 					
 					<div class="copyright text-center my-auto">

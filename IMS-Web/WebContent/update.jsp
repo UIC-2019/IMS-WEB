@@ -7,6 +7,7 @@
 <%@page import="com.ims.utils.InventoryBean"%>
 <%@page import="com.ims.controller.Controller"%>
 <%@page import = " java.util.HashMap"%>
+<%@page import="com.ims.utils.ConnectionProvider"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
@@ -27,14 +28,7 @@
 $(document).ready(function() {
     $('#dtBasicExample').DataTable();
 } );
-
-
-
-
-
 </script>
-
-
 <title>Inventory Management System</title>
 
 <!-- Custom fonts for this template-->
@@ -63,12 +57,12 @@ $(document).ready(function() {
 
 </head>
 <%
- String email = (String) session.getAttribute("email");
+    String email = (String) session.getAttribute("email");
     if (null == email) {
-    
+    session.setAttribute("ErrorMessage", "You are not logged in. Redirecting to login.");
     response.sendRedirect("login.jsp");
-    } 
-  %>
+    }
+ %>
 <body id="page-top">
 
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -78,7 +72,6 @@ $(document).ready(function() {
 	<ul class="nav navbar-nav navbar-right">
 	  <li> <a href="Home.jsp" class="nav-link">Home</a></li>
 	  <li> <a href="showinventory.jsp" class="nav-link">Show</a></li>
-	   <li><a href="search.jsp" class="nav-link">Search</a></li>
 	   <li><a href="update.jsp" class="nav-link">Update</a>	</li>
 	   <li><a href="email.jsp" class="nav-link">Email</a>	</li>
 	   <li><a href="login.jsp" class="nav-link">Logout</a></li>
@@ -114,10 +107,8 @@ $(document).ready(function() {
                <tbody>
 <%
 try{ 
-
-Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER:1433; databaseName=sqlims; integratedSecurity=true");
-
-
+	ConnectionProvider cp = new ConnectionProvider();
+	Connection conn = cp.getCon();
 Statement statement = conn.createStatement();
 
 		String Sql = "select * from inventory";
@@ -170,12 +161,20 @@ e.printStackTrace();
 					    <th style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%"><i class="fa fa-linkedin" style="font-size:24px; color:#0e76a8"></i></i></th>
 					    <th style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%"><i class="fa fa-linkedin" style="font-size:24px; color:#0e76a8"></i></i></th>
 					  </tr>
-					  <tr>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Vartika</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Nisha</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Harshitha</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Sooraj</td>
-					  </tr>
+					 <tr>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						 <a href="https://www.linkedin.com/in/vartika-singh-583b1150/"><!--LinkedIN link access -->Vartika</td></a>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="https://www.linkedin.com/in/nisha-aher/"><!--LinkedIN link access -->Nisha</td></a>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="http://www.linkedin.com/in/harshithas"><!--LinkedIN link access -->Harshitha</td>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="https://www.linkedin.com/in/sooraj-holla-65a313179/"><!--LinkedIN link access -->Sooraj</td>
+				</tr>
 					 </table>
 					
 					<div class="copyright text-center my-auto">

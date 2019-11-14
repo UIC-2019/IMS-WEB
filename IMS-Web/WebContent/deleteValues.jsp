@@ -2,6 +2,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="com.ims.utils.ConnectionProvider"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -84,20 +85,12 @@ $(document).ready(function() {
 String ProductID = request.getParameter("ProductID");
 
 try{
-	Connection conn = DriverManager.getConnection("jdbc:sqlserver://localhost\\MSSQLSERVER:1433; databaseName=sqlims; integratedSecurity=true");
-
-
+	ConnectionProvider cp = new ConnectionProvider();
+	Connection conn = cp.getCon();
 	Statement statement = conn.createStatement();
-
 			String Sql = "select * from inventory where ProductID ="+ "'" + ProductID + "'";
-			
-
 			ResultSet resultSet = statement.executeQuery(Sql);
-
-
 	while(resultSet.next() && (resultSet!=null)){
-		
-
 %>
 
 	<div id="wrapper">
@@ -150,11 +143,19 @@ e.printStackTrace();
 					    <th style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%"><i class="fa fa-linkedin" style="font-size:24px; color:#0e76a8"></i></i></th>
 					  </tr>
 					  <tr>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Vartika</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Nisha</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Harshitha</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Sooraj</td>
-					  </tr>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						 <a href="https://www.linkedin.com/in/vartika-singh-583b1150/"><!--LinkedIN link access -->Vartika</td></a>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="https://www.linkedin.com/in/nisha-aher/"><!--LinkedIN link access -->Nisha</td></a>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="http://www.linkedin.com/in/harshithas"><!--LinkedIN link access -->Harshitha</td>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="https://www.linkedin.com/in/sooraj-holla-65a313179/"><!--LinkedIN link access -->Sooraj</td>
+				</tr>
 					 </table>
 					
 					<div class="copyright text-center my-auto">

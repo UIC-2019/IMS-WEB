@@ -60,7 +60,6 @@
 	<nav class="w3-bar w3-black" >
 	  <a href="Home.jsp" class="w3-button w3-bar-item">Home</a>
 	  <a href="showinventory.jsp" class="w3-button w3-bar-item">Show</a>
-	  <a href="search.jsp" class="w3-button w3-bar-item">Search</a>
 	  <a href="update.jsp" class="w3-button w3-bar-item">Update</a>	
 	  <a href="email.jsp" class="w3-button w3-bar-item">Email</a>	
 	  <a href="login.jsp" class="w3-button w3-bar-item">Logout</a>
@@ -107,12 +106,20 @@ Quantity: <input type="text" name="QTY" style="width:10%"><br>
 					    <th style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%"><i class="fa fa-linkedin" style="font-size:24px; color:#0e76a8"></i></i></th>
 					    <th style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%"><i class="fa fa-linkedin" style="font-size:24px; color:#0e76a8"></i></i></th>
 					  </tr>
-					  <tr>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Vartika</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Nisha</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Harshitha</td>
-					    <td style="align-self:inherit; align-content:flex-start; text-align: center; width: 25%">Sooraj</td>
-					  </tr>
+					 <tr>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						 <a href="https://www.linkedin.com/in/vartika-singh-583b1150/"><!--LinkedIN link access -->Vartika</td></a>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="https://www.linkedin.com/in/nisha-aher/"><!--LinkedIN link access -->Nisha</td></a>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="http://www.linkedin.com/in/harshithas"><!--LinkedIN link access -->Harshitha</td>
+					<td
+						style="align-self: inherit; align-content: flex-start; text-align: center; width: 25%">
+						<a href="https://www.linkedin.com/in/sooraj-holla-65a313179/"><!--LinkedIN link access -->Sooraj</td>
+				</tr>
 					 </table>
 					
 					<div class="copyright text-center my-auto">
