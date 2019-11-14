@@ -29,15 +29,6 @@ return false;
 } 
 </script> 
 </head>
-<%
-    String email = (String) session.getAttribute("email");
-    if (null == email) {
-    session.setAttribute("ErrorMessage", "You are not logged in. Redirecting to login.");
-    response.sendRedirect("login.jsp");
-    } else {
-    	response.sendRedirect("Home.jsp");
-    }
- %> 
 <body>
 	
 	<div class="limiter">
@@ -48,7 +39,7 @@ return false;
 						INVENTORY MANAGEMENT
 					</span>
 				</div>
-				<form class="login100-form validate-form" action="LoginServlet" method="post" name='form' onsubmit="return validate()">
+				<form class="login100-form validate-form" action="${pageContext.request.contextPath}/LoginServlet" method="post" name='form' onsubmit="return validate()">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Email is required">
 						<span class="label-input100">Email:</span>
 						<input class="input100" type="text" name="email" placeholder="Enter Email">

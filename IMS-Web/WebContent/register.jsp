@@ -51,15 +51,7 @@ return false;
 </script> 
 	
 </head>
- <%
- String email = (String) session.getAttribute("email");
-    if (null == email) {
-    
-    response.sendRedirect("register.jsp");
-    } else {
-    	response.sendRedirect("Home.jsp");
-    }
-  %>
+ 
 <body>
 	
 	<div class="limiter">
@@ -71,7 +63,7 @@ return false;
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" name="form" action="RegisterServlet" method="post">
+				<form class="login100-form validate-form" name="form" action="${pageContext.request.contextPath}/RegisterServlet" method="post">
 										
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Full Name is required">
 						<span class="label-input100">Full Name:</span>
