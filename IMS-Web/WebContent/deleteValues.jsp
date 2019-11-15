@@ -3,7 +3,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="com.ims.utils.ConnectionProvider"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page session = "true" language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ $(document).ready(function() {
 <%
     String email = (String) session.getAttribute("email");
     if (null == email) {
-    session.setAttribute("ErrorMessage", "You are not logged in. Redirecting to login.");
+    session.setAttribute("ErrorMessage", "You are not logged in. Please login to access.");
     response.sendRedirect("login.jsp");
     }
  %>

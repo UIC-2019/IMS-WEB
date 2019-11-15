@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page session = "true" language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -33,8 +33,13 @@ return false;
 	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="wrap-login100">			
 				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+				<%
+				 String errorMessage = (String) session.getAttribute("ErrorMessage");
+				    if (session.getAttribute("ErrorMessage")!=null && (String) session.getAttribute("ErrorMessage")!="") {%>
+				    <h5 style="color: red; text-align: center;"><% out.print(errorMessage); %></h5>				    	    
+				    <%} %> 					
 					<span class="login100-form-title-1">
 						INVENTORY MANAGEMENT
 					</span>

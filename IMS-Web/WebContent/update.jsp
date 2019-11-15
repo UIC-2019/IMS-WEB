@@ -9,7 +9,7 @@
 <%@page import = " java.util.HashMap"%>
 <%@page import="com.ims.utils.ConnectionProvider"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page session = "true" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,8 +59,8 @@ $(document).ready(function() {
 <%
     String email = (String) session.getAttribute("email");
     if (null == email) {
-    session.setAttribute("ErrorMessage", "You are not logged in. Redirecting to login.");
-    response.sendRedirect("login.jsp");
+    	session.setAttribute("ErrorMessage", "You are not logged in. Please login to access.");
+        response.sendRedirect("login.jsp");
     }
  %>
 <body id="page-top">
