@@ -73,7 +73,7 @@
 				<div class="card mb-3">
 					<div class="card-header">
 						<form action="Controller/insertController.jsp">
-
+<!-- Display the field names and textboxes to the user get input values for the Product to be inserted-->
 Product Name: <input type="text" name="Product"  style="width:20%" maxlength="20"><br>
 Model Name  : <input type="text" name="Model" style="width:10%" maxlength="10"><br>
 Manufacturer: <input type="text" name="Manufacturer" style="width:20%" maxlength="20"><br>
@@ -123,7 +123,7 @@ Quantity: <input type="text" name="QTY" style="width:10%"><br>
 					 </table>
 					
 					<div class="copyright text-center my-auto">
-						<span>Copyright © Your Website 2019</span>
+						<span>Copyright Â© Your Website 2019</span>
 					</div>
 				</div>
 			</footer>
