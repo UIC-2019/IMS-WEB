@@ -63,13 +63,13 @@ public class InventoryDAO {
 		FileWriter fstream = null;
 		try {
 			//Clean it before writing
-			FileWriter fw = new FileWriter("E:\\Harshitha\\MastersProgram\\FallTerm\\EnterpriseJava\\Assignment\\HW3\\WebPage\\IMS-Web\\FileToMail.txt");
+			FileWriter fw = new FileWriter("FileToMail.txt");
 			PrintWriter pw = new PrintWriter(fw);
 			pw.write("");
 			pw.flush();
 			pw.close();
 			//fetch the file
-			filetoMail = new File("E:\\Harshitha\\MastersProgram\\FallTerm\\EnterpriseJava\\Assignment\\HW3\\WebPage\\IMS-Web\\FileToMail.txt");
+			filetoMail = new File("FileToMail.txt");
 			fstream = new FileWriter(filetoMail);
 			BufferedWriter out = new BufferedWriter(fstream);
 			//start writing into file
