@@ -62,7 +62,7 @@
 	  <a href="showinventory.jsp" class="w3-button w3-bar-item">Show</a>
 	  <a href="update.jsp" class="w3-button w3-bar-item">Update</a>	
 	  <a href="email.jsp" class="w3-button w3-bar-item">Email</a>	
-	  <a href="login.jsp" class="w3-button w3-bar-item">Logout</a>
+	  <li><a href="${pageContext.request.contextPath}/logout" class="nav-link">Logout</a></li>
 	</nav>
 	
 

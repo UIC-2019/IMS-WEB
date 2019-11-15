@@ -71,7 +71,7 @@ return false;
 				<li><a href="showinventory.jsp" class="nav-link">Show</a></li>
 				<li><a href="update.jsp" class="nav-link">Update</a></li>
 				<li><a href="email.jsp" class="nav-link">Email</a></li>
-				<li><a href="login.jsp" class="nav-link">Logout</a></li>
+				<li><a href="${pageContext.request.contextPath}/logout" class="nav-link">Logout</a></li>
 			</ul>
 		</div>
 	</nav>
