@@ -107,14 +107,15 @@ $(document).ready(function() {
                <tbody>
 <%
 try{ 
+        //Connect to the database
 	ConnectionProvider cp = new ConnectionProvider();
 	Connection conn = cp.getCon();
 Statement statement = conn.createStatement();
-
+                //Fetch all the values in inventory table from the database
 		String Sql = "select * from inventory";
 		ResultSet resultSet = statement.executeQuery(Sql);
 
-
+//Display all the values from inventory table in a table format on webpage
 while(resultSet.next() && (resultSet!=null)){
 %>       
        		 <tr><td><%=resultSet.getString("ProductID")%></td> 	
@@ -127,6 +128,7 @@ while(resultSet.next() && (resultSet!=null)){
 			<td><%=resultSet.getString("UNITCOST") %></td>
 			<td><%=resultSet.getString("DISCOUNTRATE") %></td>
 			<td><%=resultSet.getString("QTY") %></td>
+			 <!-- Display the options to edit, delete and add-->
             <td><a href="updateValues.jsp?ProductID=<%=resultSet.getString("ProductID")%>">Edit</a> 
             <a href="deleteValues.jsp?ProductID=<%=resultSet.getString("ProductID")%>">Del</a>
             <a href="insertValues.jsp?ProductID=<%=resultSet.getString("ProductID")%>">Add</a></td>
@@ -178,7 +180,7 @@ e.printStackTrace();
 					 </table>
 					
 					<div class="copyright text-center my-auto">
-						<span>Copyright © Your Website 2019</span>
+						<span>Copyright Â© Your Website 2019</span>
 					</div>
 				</div>
 			</footer>
