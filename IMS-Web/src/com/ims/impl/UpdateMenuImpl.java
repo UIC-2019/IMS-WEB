@@ -25,13 +25,15 @@ public class UpdateMenuImpl {
 	}
 	
 	public void insertValues(String[] arr) throws SQLException {
-		
+		//Connect to the database
 		ConnectionProvider cp = new ConnectionProvider();
 		Connection conn = cp.getCon();
 		Statement statement = conn.createStatement();
 		PreparedStatement ps = null;
+		//Execute the SQL qeuery to fetch the last ProductID
 		 String selectSql = "Select * from inventory where ProductID = (SELECT max(ProductID) from inventory)"; 
 		  	  ResultSet resultSet = statement.executeQuery(selectSql);
+		//Steps to populate the next ProductID in alphanumeric format
 			  if (resultSet.next()) {
 				  String id=resultSet.getString(1);
 					id = id.substring(1);
@@ -43,11 +45,11 @@ public class UpdateMenuImpl {
 					}
 					arr[0] = "a" + id;
 				  } 
-			  
+			        //SQL querto to insert the values into the database 
 				String sql = "INSERT INTO inventory VALUES(?,?,?,?,?,?,?,?,?,?)";
 				
 				ps = conn.prepareStatement(sql);
-				
+				//Add individual field values from array of values to be inserted to Preparedstatement
 				ps.setString(1, arr[0]);
 				ps.setString(2, arr[1]);
 				ps.setString(3, arr[2]);
@@ -58,7 +60,7 @@ public class UpdateMenuImpl {
 				ps.setFloat(8, Float.parseFloat(arr[7]));
 				ps.setFloat(9, Float.parseFloat(arr[8]));
 				ps.setInt(10, Integer.parseInt(arr[9]));
-				
+				//Execute the insert query/prepated statement
 				ps.executeUpdate();
 	}
 
