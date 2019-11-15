@@ -65,7 +65,7 @@
 		</div>
 	</nav>
 	<div class="panel panel-default custom_class"> <!-- Note the new class -->
-    <div class="panel-heading"><h2 >Welcome</h2>
+    <div class="panel-heading"><h2 style="color: white">Welcome!</h2>
 </div>
 	<!-- /#wrapper -->
 	<footer class="sticky-footer" style="width: 100%">
