@@ -21,9 +21,11 @@
 	Statement statement = null;
 	
 	try {
+	        //connect to the database
 		ConnectionProvider cp = new ConnectionProvider();
 		connect= cp.getCon();
 		statement = connect.createStatement();
+		//Get the updated values provided by the user and store the values in respective variables
 		String ProductID = request.getParameter("ProductID");
 		String Product = request.getParameter("Product");
 		String Model = request.getParameter("Model");
@@ -35,9 +37,9 @@
 		float DISCOUNTRATE = Float.parseFloat(request.getParameter("DISCOUNTRATE"));
 		float QTY = Float.parseFloat(request.getParameter("QTY"));
 		
-
+                //Get the ProductID to be updated
 		String id= request.getParameter("id");
-		
+		//Execute the update query
 		String sql = "UPDATE inventory " +
 				"SET Product = '"+ Product + "' " +
 				", Model = '"+ Model + "' " +
