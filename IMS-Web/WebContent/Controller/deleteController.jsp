@@ -17,14 +17,17 @@
 	<%	
 	Connection connect = null;
 	Statement statement = null;
-	
+	//Connect to database
 	try {
 		ConnectionProvider cp = new ConnectionProvider();
 		Connection conn = cp.getCon();
 		statement = conn.createStatement();
+		//get ProductID to be deleted from JSP page
 		String ProductID = request.getParameter("id");
+		//Define the dDelete SQL Query for the specific product ID
 		String sql = "Delete from inventory " +
 				" WHERE ProductID = '" + ProductID + "' ";
+	        //Execute the delete query
 		statement.execute(sql);
          out.println("Record was deleted successfully");
 	  		
