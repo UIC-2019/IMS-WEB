@@ -77,11 +77,12 @@ $(document).ready(function() {
 
 String ProductID = request.getParameter("ProductID");
 
-try{
+try{    
+        //connect to the database
 	ConnectionProvider cp = new ConnectionProvider();
 	Connection conn = cp.getCon();
 	Statement statement = conn.createStatement();
-
+        //Fetch the values for the Product ID to be updated from iventory table
 			String Sql = "select * from inventory where ProductID ="+ "'" + ProductID + "'";
 			
 
@@ -99,7 +100,7 @@ try{
 				<div class="card mb-3">
 					<div class="card-header">
 						<form action="Controller/updateController.jsp">
-
+<!-- Display the editable textboxes to the user with existing values pre-populated-->
 <input type="hidden" name="id" value="<%=resultSet.getString("ProductID") %>"><br>
 ProductID    :    <input type="text" name="ProductID" value="<%=resultSet.getString("ProductID") %>" disabled><br>
 Product:      <input type="text" name="Product" value="<%=resultSet.getString("Product") %>"><br>
@@ -159,7 +160,7 @@ e.printStackTrace();
 					 </table>
 					
 					<div class="copyright text-center my-auto">
-						<span>Copyright © Your Website 2019</span>
+						<span>Copyright Â© Your Website 2019</span>
 					</div>
 				</div>
 			</footer>

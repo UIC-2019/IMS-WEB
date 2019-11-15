@@ -12,7 +12,8 @@
 
 
 <%
-
+//Store the details for the Product to be inserted into the inventory table in an array
+//The values for all fields will be provided by the updateValues.jsp based on user inputs
 String[] arr= new String[10];
 arr[0]="temp";
 arr[1]=request.getParameter("Product");
@@ -24,7 +25,9 @@ arr[6]=request.getParameter("MSRP");
 arr[7]=request.getParameter("UNITCOST");
 arr[8]=request.getParameter("DISCOUNTRATE");
 arr[9]=request.getParameter("QTY");
+//Define a new object for UpdateMenuImpl class
 UpdateMenuImpl obj = new UpdateMenuImpl();
+//call the insertValues function and pass the array with the data to be inserted
 obj.insertValues(arr);
 %>
 

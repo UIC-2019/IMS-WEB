@@ -85,9 +85,11 @@ $(document).ready(function() {
 String ProductID = request.getParameter("ProductID");
 
 try{
+        //connect to the database
 	ConnectionProvider cp = new ConnectionProvider();
 	Connection conn = cp.getCon();
 	Statement statement = conn.createStatement();
+	//Fetch the values for the ProductID from inventory table
 			String Sql = "select * from inventory where ProductID ="+ "'" + ProductID + "'";
 			ResultSet resultSet = statement.executeQuery(Sql);
 	while(resultSet.next() && (resultSet!=null)){
@@ -99,7 +101,7 @@ try{
 				<div class="card mb-3">
 					<div class="card-header">
 						<form action="Controller/deleteController.jsp">
-
+<!-- Display the values for the ProductID to be deleted to the user to get confirmation before deleting the record-->
 <input type="hidden" name="id" value="<%=resultSet.getString("ProductID") %>"><br>
 ProductID    :    <input type="text" name="ProductID" value="<%=resultSet.getString("ProductID") %>" disabled><br>
 Product:      <input type="text" name="Product" value="<%=resultSet.getString("Product") %>" disabled><br>
@@ -159,7 +161,7 @@ e.printStackTrace();
 					 </table>
 					
 					<div class="copyright text-center my-auto">
-						<span>Copyright © Your Website 2019</span>
+						<span>Copyright Â© Your Website 2019</span>
 					</div>
 				</div>
 			</footer>
